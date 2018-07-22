@@ -50,7 +50,9 @@
     "electron-compile": "^6.4.3",
     "electron-devtools-installer": "^2.1.0",
     "electron-squirrel-startup": "^1.0.0",
-    "vue": "^2.1.7"
+    "vue": "^2.1.7",
+    "vue-router": "^3.0.1",
+    "vueify": "^9.4.1"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",

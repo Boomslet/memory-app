@@ -1,19 +1,12 @@
 <template>
-  <div>
-    
-  </div>
+  <p>Hello</p>
 </template>
 
 <script>
-export default {
-  
-}
+export default {};
 </script>
 
-<style lang="scss" scoped>
-#div {
-  height: 100vh;
-  background-color: wheat;
-}
+<style scoped>
 </style>
+
 

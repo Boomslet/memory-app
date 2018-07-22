@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>MEMORY</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
 </head>
 
 <body>
@@ -12,9 +14,11 @@
 
 <script>
   import Vue from 'vue';
-  import Home from './Home/Home.vue';
+  import App from './App.vue';
 
-  const app = new Vue(Home).$mount('#app');
+  new Vue({
+    render: h => h(App),
+  }).$mount('#app');
 
 </script>
 
@@ -23,7 +27,7 @@
   body {
     height: 100vh;
     width: 100vw;
-    background-color: wheat;
+    background-color: #14181E;
   }
 </style>
 
