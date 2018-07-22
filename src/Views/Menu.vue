@@ -3,7 +3,7 @@
     <router-view/>
     <form class="form-group">
       <h2>MEMORY</h2>
-      <button class="btn btn-primary" @click.prevent="navigateTo('home')">START GAME</button>
+      <button class="btn btn-primary" @click.prevent="navigateTo('play')">START GAME</button>
       <button class="btn btn-primary" @click.prevent="navigateTo('options')">OPTIONS</button>
       <button class="btn btn-primary" @click.prevent="closeApp">EXIT</button>
     </form>
@@ -30,18 +30,19 @@ export default {
 #app {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   color: #2c3e50;
-  height: 100vh;
+  height: 90vh;
 }
 
 button {
+  font-size: 20px;
   margin: 20px auto;
-  width: 150px;
+  width: 200px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   justify-content: center;
 }
 

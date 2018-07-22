@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Menu from './Views/Menu.vue';
-import Home from './Views/Home.vue';
+import Play from './Views/Play.vue';
 
 Vue.use(Router);
 
@@ -18,9 +18,9 @@ export default new Router({
       component: Menu,
     },
     {
-      path: '/home',
-      name: 'home',
-      component: Home,
+      path: '/play',
+      name: 'play',
+      component: Play,
     },
   ],
 });

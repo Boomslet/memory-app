@@ -11,6 +11,6 @@ export default {};
 
 <style lang="scss">
 #app {
-  height: 100vh;
+  height: 90vh;
 }
 </style>
