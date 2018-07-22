@@ -24,30 +24,33 @@ export default {
       this.$router.push({ name: uri });
     },
     generateSequence() {
-      console.log(this.$refs)
-      this.sequence.forEach(index => {
-        this.$refs[index][0].style.backgroundColor = "indianred";
-      });
-      
       this.sequence = [];
 
       for (let i = 0; i < 5; i++) {
         this.sequence.push(Math.floor(Math.random() * 15) + 1);
-      };
+      }
+    },
+    playSequence() {
+      let i = 1;
 
-        console.log(this.$refs)
       this.sequence.forEach(index => {
-        this.$refs[index][0].style.backgroundColor = "white";
+        let box = this.$refs[index][0];
+        setTimeout(() => {
+          box.style.backgroundColor = "white";
+        }, 500 * i++);
+        setTimeout(() => {
+          box.style.backgroundColor = "#8a2be2";
+        }, 500 * i + 1)
+        // this.$refs[index][0].style.backgroundColor = "#8A2BE2";
       });
     },
-    playSequence() {}
   }
 };
 </script>
 
 <style scoped lang="scss">
 .box {
-  background-color: indianred;
+  background-color: #8a2be2;
   height: 75px;
   margin: 5px;
   width: 75px;
@@ -61,7 +64,7 @@ export default {
 }
 
 .box:hover {
-  background-color: violet;
+  background-color: indianred;
 }
 
 .container {
