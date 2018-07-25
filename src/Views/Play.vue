@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <div class="info-bar">
-      <h2>Hello, this is home</h2>
+      <h2>LEVEL: {{ level }}</h2>
       <button class="btn btn-primary" @click="navigateTo('menu')">BACK</button>
       <button class="btn btn-primary" @click="generateSequence">GEN</button>
       <button class="btn btn-primary" @click="playSequence">PLAY</button>
     </div>
     <div class="screen">
-      <div class="box" v-for="(n, i) in 16" :key="n" :ref="i"></div>
+      <div class="box card" @click="userSelect(i)" v-for="(n, i) in 16" :key="n" :ref="i"></div>
     </div>
   </div>
 </template>
@@ -16,7 +16,9 @@
 export default {
   data() {
     return {
-      sequence: []
+      sequence: [],
+      currentUserIndex: 0,
+      level: 1
     };
   },
   methods: {
@@ -39,11 +41,25 @@ export default {
           box.style.backgroundColor = "white";
         }, 500 * i++);
         setTimeout(() => {
-          box.style.backgroundColor = "#8a2be2";
-        }, 500 * i + 1)
-        // this.$refs[index][0].style.backgroundColor = "#8A2BE2";
+          box.style = null;
+        }, 500 * i - 50);
       });
     },
+    userSelect(index) {
+      if (index === this.sequence[this.currentUserIndex]) {
+        this.currentUserIndex++;
+
+        if (this.currentUserIndex === 5) {
+          this.level++;
+          this.currentUserIndex = 0;
+          this.generateSequence();
+          this.playSequence();
+        }
+      } else {
+        alert("RIP");
+        return;
+      }
+    }
   }
 };
 </script>
@@ -64,7 +80,7 @@ export default {
 }
 
 .box:hover {
-  background-color: indianred;
+  background-color: #007bff;
 }
 
 .container {
