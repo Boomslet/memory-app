@@ -47,7 +47,7 @@ export default {
       this.sequence.forEach(index => {
         let box = this.$refs[index][0];
         setTimeout(() => {
-          box.style.backgroundColor = "white";
+          box.style.backgroundColor = "gold";
         }, 500 * i++);
         setTimeout(() => {
           box.style = null;
@@ -78,7 +78,7 @@ export default {
         setTimeout(() => {
           this.$refs[index][0].style = null;
         }, 200);
-        
+
         alert(`You reach Level ${this.level} - matching ${this.count} tiles!`);
         this.count = 0;
         this.currentUserIndex = 0;
@@ -92,21 +92,10 @@ export default {
 <style scoped lang="scss">
 .box {
   background-color: #8a2be2;
-  height: 75px;
+  height: 85px;
   margin: 5px;
-  width: 75px;
+  width: 85px;
   transition: all 0.2s ease-out;
-}
-
-.box-clicked {
-  background-color: #8a2be2;
-}
-
-.box-selected {
-  background-color: white;
-  height: 75px;
-  margin: 5px;
-  width: 75px;
 }
 
 .box:hover {
@@ -114,9 +103,9 @@ export default {
 }
 
 button {
-  font-size: 20px;
+  font-size: 15px;
   margin: 20px;
-  width: 200px;
+  width: 75px;
 }
 
 .container {
@@ -127,6 +116,7 @@ button {
 
 h2 {
   color: white;
+  font-size: 25px;
 }
 
 .info-bar {
@@ -144,16 +134,15 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  height: 400px;
+  height: 480px;
   margin: auto;
-  width: 400px;
+  width: 470px;
 }
 
 .spaced-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: calc(auto + 100px);
 }
 </style>
 
